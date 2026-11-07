@@ -1,0 +1,44 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
+  "productName": "Retriev",
+  "version": "0.1.0",
+  "identifier": "com.retriev.desktop",
+  "build": {
+    "frontendDist": "../dist",
+    "devUrl": "http://localhost:5173",  
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "Retriev : A local RAG assistant",
+        "width": 1000,
+        "height": 900,
+        "resizable": true,
+        "fullscreen": false
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "resources": {
+      "../../dist/RetrievBackend/": "RetrievBackend/"
+    },
+    "icon": [
+      "icons/logo_32x32.png",
+      "icons/logo_128x128.png",
+      "icons/logo_256x256.png",
+      "icons/logo.icns",
+      "icons/logo.ico"
+    ],
+    "android": {
+      "debugApplicationIdSuffix": ".debug"
+    }
+  }
+}
